@@ -29,11 +29,11 @@ const Login = () => {
     }
     return (
         <>
-
+  <h1>Login Page</h1>
 
             {checkUser ? (
                 <>
-                    <h1>Login Page</h1>
+                  
                     {checkError && "Invalid username and password"}
                     <p>Username:</p>  <input type='text' name='username' onChange={handleChange} placeholder='username' required /><br />
                     <p>Password:</p> <input type='password' name='password' onChange={handleChange}  placeholder='password' required /> <br />
