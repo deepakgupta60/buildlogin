@@ -34,13 +34,16 @@ const Login = () => {
             {checkUser ? (
                 <>
                   
-                    {checkError && "Invalid username and password"}
-                    <p>Username:</p>  <input type='text' name='username' onChange={handleChange} placeholder='username' required /><br />
-                    <p>Password:</p> <input type='password' name='password' onChange={handleChange}  placeholder='password' required /> <br />
-                    <button onClick={handleSubmit}>Submit</button>
+                  <form onSubmit={handleSubmit}>
+
+                    {checkError && "Invalid username or password"}
+                    <label>Username</label>  <input type='text' name='username' onChange={handleChange} placeholder='username' required /><br />
+                    <label>Password</label> <input type='password' name='password' onChange={handleChange}  placeholder='password' required /> <br />
+                    <button>Submit</button>
+                  </form>
                 </>
 
-            ) : <p>Welcome, User!</p>}
+            ) : <p>Welcome, user</p>}
 
         </>
     )
