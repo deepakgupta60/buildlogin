@@ -16,7 +16,8 @@ const Login = () => {
             [name]:value
         }))
     }
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault();
         console.log(formData)
         if (formData.username === "user" && formData.password === "password") {
             setCheckUser(false)
@@ -33,14 +34,16 @@ const Login = () => {
 
             {checkUser ? (
                 <>
-                  
-                  <form onSubmit={handleSubmit}>
+                   {checkError ? "Invalid username or password": null  }                   
+                   <form onSubmit={handleSubmit}>
 
-                    {checkError && "Invalid username or password"}
+                   
                     <label>Username</label>  <input type='text' name='username' onChange={handleChange} placeholder='username' required /><br />
                     <label>Password</label> <input type='password' name='password' onChange={handleChange}  placeholder='password' required /> <br />
                     <button>Submit</button>
                   </form>
+                 
+                  
                 </>
 
             ) : <p>Welcome, user</p>}
